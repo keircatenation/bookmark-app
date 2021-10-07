@@ -7,6 +7,8 @@ export default function CreatePost(props) {
         summary:"",
         notes:""
     })
+    const [summaryValid, setSummaryValid] = useState(true);
+
     const handleChange = e => {
         setPosts({
             ...post,
@@ -16,6 +18,9 @@ export default function CreatePost(props) {
     const handleSubmit = e =>{
         e.preventDefault();
         console.log("post", post)
+    }
+    const summaryValidate = e => {
+        e.target.value.length > 40 ? setSummaryValid(false) : setSummaryValid(true)
     }
 
     return (
@@ -32,7 +37,13 @@ export default function CreatePost(props) {
                 </div>
                 <div className="input-field">
                     <label htmlFor="summary">Summary</label>
-                    <input type="text" id="summary" value={post.summary} onChange={handleChange}/>
+                    <input type="text" id="summary"
+                    maxLength="41"
+                    value={post.summary} onChange={e => (handleChange(e), summaryValidate(e))}
+                    onBlur={summaryValidate}/>
+                </div>
+                <div className="error" hidden={summaryValid}>
+                    Summaries must be 40 characters or less.
                 </div>
                 <div className="input-field">
                     <label htmlFor="notes">Notes</label>
