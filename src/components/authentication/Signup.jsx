@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+//import { app } from '../../../config';
 
 export default function Signup(props) {
     const [credentials, setCred] = useState({
@@ -8,8 +9,6 @@ export default function Signup(props) {
         email:""
     });
     const [valid, setValid] = useState(true);
-    
-
     
     const handleSubmit = e => {
         e.preventDefault();

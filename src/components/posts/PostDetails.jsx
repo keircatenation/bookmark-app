@@ -10,15 +10,15 @@ export default function PostDetails(props) {
     }
 
     return (
-        <div className="container section post-details">
+        <div className="container section card">
             <div className="card-content">
-                <span className="card-titl">
-                    <a href={post.link} target="_blank" title={post.link} alt={props.post.link}>{props.post.title}</a>
+                <span className="card-title">
+                <a href={post.link}>{post.title}</a>
                 </span>
                 <p className="flow-text">{post.notes}</p>
             </div>
             <div className="card-action">
-                <p>user name - Date</p>
+                <p>User Name - Date</p>
             </div>
         </div>
     )
