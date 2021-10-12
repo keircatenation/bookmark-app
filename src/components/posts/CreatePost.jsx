@@ -4,6 +4,7 @@ export default function CreatePost(props) {
     const [post, setPosts] = useState({
         title:"",
         link:"",
+        category:"",
         summary:"",
         notes:""
     })
@@ -34,6 +35,10 @@ export default function CreatePost(props) {
                 <div className="input-field">
                     <label htmlFor="link">Link</label>
                     <input type="text" id="link" value={post.link} onChange={handleChange}/>
+                </div>
+                <div className="input-field">
+                    <label htmlFor="category">Category</label>
+                    <input type="text" id="category" value={post.category} onChange={handleChange}/>
                 </div>
                 <div className="input-field">
                     <label htmlFor="summary">Summary</label>

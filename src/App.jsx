@@ -1,30 +1,30 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route }  from 'react-router-dom'
 import Navbar from './components/navigation/Navbar'
 import Dashboard from './components/dashboard/Dashboard'
-import Signin from './components/authentication/Signin'
-import Signup from "./components/authentication/Signup"
-import Profile from "./components/dashboard/Profile"
+import SignIn from './components/authentication/Signin'
+import SignUp from './components/authentication/Signup'
+import Profile from './components/dashboard/Profile'
 import CreatePost from './components/posts/CreatePost'
 import PostDetails from './components/posts/PostDetails'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {
 
   return (
     <Router>
-      <div className="App">
-        <Navbar/>
+      <main className="App">
+        <Navbar />
         <div className="content">
           <Switch>
             <Route exact path='/' component={Dashboard} />
-            <Route path='/signin' component={Signin} />
-            <Route path='/signup' component={Signup} />
+            <Route path='/signin' component={SignIn} />
+            <Route path='/signup' component={SignUp} />
             <Route path='/profile' component={Profile} />
             <Route path='/create' component={CreatePost} />
             <Route path='/post/:id' component={PostDetails} />
           </Switch>
         </div>
-      </div>
+      </main>
     </Router>
   )
 }

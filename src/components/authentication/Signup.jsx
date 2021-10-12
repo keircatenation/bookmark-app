@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 //import { app } from '../../../config';
 
 export default function Signup(props) {
+    const isAuthed = 0;
     const [credentials, setCred] = useState({
         firstName:"",
         lastName:"",
